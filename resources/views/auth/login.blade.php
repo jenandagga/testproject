@@ -91,8 +91,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- begin:: Page -->
     <div class="kt-grid kt-grid--ver kt-grid--root">
         <div class="kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v2 kt-login--signin" id="kt_login">
-            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(assets/media//bg/bg-1.jpg);">
-                <div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
+            <div class="kt-grid_item kt-grid_item--fluid kt-grid kt-grid--hor" style="background-image: url(assets/media//bg/bg-1.jpg);">
+                <div class="kt-grid_item kt-griditem--fluid kt-login_wrapper">
                     <div class="kt-login__container">
                         <div class="kt-login__logo">
                             <a href="#">
@@ -104,7 +104,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <h3 class="kt-login__title">Sign In To Admin</h3>
                             </div>
                             <form class="kt-form" method="POST" action="{{ route('login') }}">
-                                @csrf
+                            @csrf
+
                                 <div class="input-group">
                                     <input class="form-control @error('email') is-invalid @enderror" id="email" type="email" placeholder="Email" name="email" autocomplete="off" required autocomplete="email" autofocus>
                                 </div>
@@ -133,7 +134,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="kt-login__desc">Enter your details to create your account:</div>
                             </div>
                             <form class="kt-login__form kt-form" method="POST" action="{{ route('register') }}">
-                                @csrf
+                            @csrf
+
 
                                 <div class="input-group">
                                     <input class="form-control" type="text" placeholder="Fullname" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -168,6 +170,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="kt-login__desc">Enter your email to reset your password:</div>
                             </div>
                             <form class="kt-form" action="">
+                            @csrf
                                 <div class="input-group">
                                     <input class="form-control" type="text" placeholder="Email" name="email" id="kt_email" autocomplete="off">
                                 </div>
@@ -216,7 +219,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- end::Global Config -->
 
     <!--begin:: Global Mandatory Vendors -->
-    <script src="./asset('assets/vendors/general/jquery/dist/jquery.js')}}" type="text/javascript"></script>
+    <script src="{{asset('assets/vendors/general/jquery/dist/jquery.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/vendors/general/popper.js/dist/umd/popper.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/vendors/general/bootstrap/dist/js/bootstrap.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/vendors/general/js-cookie/src/js.cookie.js')}}" type="text/javascript"></script>
